@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{ num }}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                num: 10,
+            },
+            computed: {
+                doubleNum: function() {
+                    return this.num * 2;
+                }
+            },
+            watch: {
+                num: function (newValue) {
+                   this.fetchUserByNumber(newValue);
+                }
+            },
+            methods: {
+                fetchUserByNumber: function(num) {
+                    console.log(num);
+                },
+            },
+        })
+    </script>
+</body>
+</html>
