@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        var div = document.querySelector('#app');
+        var viewModel = {};
+
+        (function() { //즉시 실행 함수
+            function init() {
+                Object.defineProperty(viewModel, 'str', {
+                    //속성 접근했을 때  동작 정의
+                    get: function () {
+                        console.log('접근');
+                    },
+                    //속성에 값 할당했을 때 동작 정의
+                    set: function (newValue) {
+                        console.log('할당', newValue);
+                        render(newValue);
+                    }
+                });
+            }
+
+            function render(value) {
+                div.innerHTML = value;
+            }
+
+            init();
+        })();
+    </script>
+</body>
+</html>
