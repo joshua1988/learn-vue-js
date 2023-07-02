@@ -1,0 +1,20 @@
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<body>
+  <div id="app">
+    <app-header></app-header>
+  </div>
+
+  <script>
+    var AppHeader = {
+      template: '<h1>컴포넌트 예제</h1>',
+    };
+
+    Vue.createApp({
+      // 컴포넌트 옵션 속성
+      components: {
+        'app-header': AppHeader,
+      },
+    }).mount('#app');
+  </script>
+</body>

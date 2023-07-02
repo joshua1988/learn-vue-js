@@ -1,0 +1,20 @@
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="item in items">{{ item }}</li>
+    </ul>
+  </div>
+
+  <script>
+    Vue.createApp({
+      // 컴포넌트 옵션 속성
+      data: function () {
+        return {
+          items: ['삼성', '인프런', '네이버'],
+        };
+      },
+    }).mount('#app');
+  </script>
+</body>

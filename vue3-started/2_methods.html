@@ -1,0 +1,23 @@
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<body>
+  <div id="app">
+    <button v-on:click="showAlert">show</button>
+  </div>
+
+  <script>
+    Vue.createApp({
+      // 컴포넌트 옵션 속성
+      data: function () {
+        return {
+          message: 'hi',
+        };
+      },
+      methods: {
+        showAlert() {
+          alert('hi');
+        },
+      },
+    }).mount('#app');
+  </script>
+</body>

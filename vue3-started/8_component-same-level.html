@@ -1,0 +1,54 @@
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<body>
+  <div id="app">
+    <app-header v-on:countup="addCount"></app-header>
+    <app-contents v-bind:count="count"></app-contents>
+  </div>
+
+  <script>
+    var AppHeader = {
+      template: `
+        <h1>
+          <button v-on:click="increase">카운트 증가</button>
+        </h1>
+      `,
+      methods: {
+        increase() {
+          // #1
+          this.$emit('countup');
+          // #2
+          // this.$emit('countup', 10);
+        }
+      },
+    };
+
+    var AppContents = {
+      template: '<p>my counter is {{ count }}</p>',
+      props: ['count'],
+    }
+
+    Vue.createApp({
+      // 컴포넌트 옵션 속성
+      components: {
+        'app-header': AppHeader,
+        'app-contents': AppContents,
+      },
+      data() {
+        return {
+          count: 0,
+        }
+      },
+      methods: {
+        // #1
+        addCount() {
+          this.count++;
+        },
+        // #2
+        // addCount(count) {
+        //   this.count += count;
+        // }
+      }
+    }).mount('#app');
+  </script>
+</body>

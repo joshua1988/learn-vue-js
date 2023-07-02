@@ -1,0 +1,55 @@
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<style>
+  .primary {
+    color: blue;
+  }
+  .lg {
+    font-size: large;
+  }
+</style>
+
+<body>
+  <div id="app">
+    <!-- #1 -->
+    <p class="primary">파란 텍스트</p>
+    <p v-bind:class="mainColor">파란 텍스트</p>
+    <hr>
+
+    <!-- #2 -->
+    <div class="primary">일반 텍스트</div>
+    <div class="primary" v-bind:class="largeText">큰 텍스트</div>
+    <hr>
+
+    <!-- #3 -->
+    <section style="font-weight: 900;">
+      hi
+    </section>
+    <section v-bind:style="{'font-weight': fontWeight}">
+      hi
+    </section>
+    <section v-bind:style="fontStyle">
+      hi
+    </section>
+    <hr>
+    
+    <!-- #4 -->
+    <section style="font-weight: 900;" v-bind:style="{ color: textColor }">
+      hi
+    </section>
+  </div>
+
+  <script>
+    Vue.createApp({
+      // 컴포넌트 옵션 속성
+      data() {
+        return {
+          mainColor: 'primary',
+          largeText: 'lg',
+          fontWeight: 900,
+          fontStyle: { 'font-weight': 900 },
+          textColor: 'red'
+        }
+      },
+    }).mount('#app');
+  </script>
+</body>
