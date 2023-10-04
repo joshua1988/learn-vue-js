@@ -3,8 +3,6 @@
 [Vue.js 시작하기 인프런 강의](https://inf.run/RxKK)와 [Vue 3 시작하기 인프런 강의](https://inf.run/kRHp) 리포지토리입니다.
 
 ![인프런 Vue 3 시작하기 강의 썸네일](https://cdn.inflearn.com/public/courses/332010/cover/fffd02eb-685e-44ab-aa0d-6788349338c5/332010-eng.png)
-![인프런 Vue.js 시작하기 강의 썸네일](https://cdn.inflearn.com/public/courses/324088/course_cover/ac203578-d458-44f4-b273-81cb719a89b0/lv1.png)
-
 
 ## License & Copyright
 
